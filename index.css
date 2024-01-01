@@ -1,16 +1,20 @@
 .heading {
-  background: #44b496;
+  color: #44b496;
+  background: black;
   padding: auto;
   margin: auto;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   text-align: center;
+  border-radius: bold 1px white;
 }
 .header {
   background-color: black;
   display: flex;
   justify-content: space-between;
   padding: auto;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .company-img {
   cursor: pointer;
@@ -22,4 +26,26 @@
   background: #44b496;
   padding: 10px;
   margin: 5px;
+}
+.currency-converter-container {
+  text-align: center;
+  height: 1000px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 200px;
+}
+.data-img-container {
+  height: 400px;
+  width: 400px;
+}
+.form-container {
+  border: 1px black;
+  border-style: solid;
+  margin: 20px;
+  padding: 20px;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: #44b496;
 }
