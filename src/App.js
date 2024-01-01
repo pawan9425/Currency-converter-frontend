@@ -1,14 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import CurrencyConverterForm from "./components/CurrencyConverterForm";
+import ConverterForm from "./components/ConverterForm";
+import Header from "./components/Header";
 
-const Component = function () {
+const App = () => {
   return (
     <div>
-      <h1>Component</h1>
+      <Header />
+      <CurrencyConverterForm />
+      <ConverterForm />
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Component />);
+root.render(<App />);
+
+export default App;
