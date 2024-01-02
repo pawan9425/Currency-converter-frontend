@@ -1,3 +1,4 @@
+//Currency cinverter component
 import React, { useState, useEffect } from "react";
 import {
   getCryptoList,
@@ -6,6 +7,7 @@ import {
 } from "../services/request.js";
 
 const CurrencyConverterForm = () => {
+  // State variables to manage form data and API responses
   const [cryptoList, setCryptoList] = useState([]);
   const [supportedCurrenciesList, setSupportedCurrenciesList] = useState([]);
   const [sourceCrypto, setSourceCrypto] = useState("");
@@ -14,6 +16,7 @@ const CurrencyConverterForm = () => {
   const [convertedAmount, setConvertedAmount] = useState(null);
   const [error, setError] = useState("");
 
+  // Fetches the list of cryptocurrencies when the component mounts
   useEffect(() => {
     async function fetchCryptoList() {
       try {
@@ -29,6 +32,7 @@ const CurrencyConverterForm = () => {
     fetchCryptoList();
   }, []);
 
+  // Fetches the list of supported currencies when the component mounts
   useEffect(() => {
     async function fetchSupportedCurrenciesList() {
       try {
@@ -47,6 +51,7 @@ const CurrencyConverterForm = () => {
     fetchSupportedCurrenciesList();
   }, []);
 
+  // Handles form submission to convert the currency
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!sourceCrypto || !amount) {
@@ -60,7 +65,6 @@ const CurrencyConverterForm = () => {
         amount,
         targetCurrency
       );
-      console.log(`result is here`, result);
       setConvertedAmount(result.convertedAmount);
       setError("");
     } catch (error) {
@@ -68,6 +72,7 @@ const CurrencyConverterForm = () => {
     }
   };
 
+  // Renders the form and handles user interactions
   return (
     <div className="body-container">
       <div className="img container">
